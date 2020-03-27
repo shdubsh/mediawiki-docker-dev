@@ -73,12 +73,21 @@ services:
      - ./config/mediawiki:/var/www/mediawiki/.docker:ro
      - ./scripts/wait-for-it.sh:/srv/wait-for-it.sh:ro
      - mw-images:/var/www/mediawiki/images/docker:delegated
+
   graphite-statsd:
-    image: hopsoft/graphite-statsd
+    image: shdubsh/graphite-statsd-proxy-statsite:latest
     environment:
-     - VIRTUAL_HOST=graphite.mw.localhost
+      - VIRTUAL_HOST=graphite.mw.localhost
     volumes:
      - graphite-data:/opt/graphite/storage
+
+  grafana:
+    image: grafana/grafana:6.7.1
+    environment:
+      - VIRTUAL_HOST=grafana.mw.localhost
+    volumes:
+      - "./config/grafana/grafana.ini:/etc/grafana/grafana.ini:ro"
+      - "./config/grafana/provisioning:/etc/grafana/provisioning:ro"
 
   nginx-proxy:
     image: jwilder/nginx-proxy

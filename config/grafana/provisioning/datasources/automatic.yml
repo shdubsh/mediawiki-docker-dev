@@ -1,0 +1,20 @@
+apiVersion: 1
+
+deleteDatasources:
+  - orgId: 1
+
+datasources:
+- access: proxy
+  basicAuth: false
+  database: ''
+  id: 1
+  isDefault: true
+  jsonData: {}
+  name: Graphite
+  orgId: 1
+  password: ''
+  readOnly: false
+  type: graphite
+  typeLogoUrl: public/app/plugins/datasource/graphite/img/graphite_logo.png
+  url: http://graphite-statsd
+  user: ''

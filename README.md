@@ -127,6 +127,7 @@ Add the following to your `/etc/hosts` file:
 127.0.0.1 proxy.mw.localhost # mediawiki-docker-dev
 127.0.0.1 phpmyadmin.mw.localhost # mediawiki-docker-dev
 127.0.0.1 graphite.mw.localhost # mediawiki-docker-dev
+127.0.0.1 grafana.mw.localhost # mediawiki-docker-dev
 ```
 
 You can also use the `./hosts-sync` script to try and update it automatically if possible. You may
@@ -345,4 +346,3 @@ https://stackoverflow.com/questions/29045140/env-bash-r-no-such-file-or-director
 
 - Statsv endpoint
 - Setup awesome hosts file additions & removals
-
