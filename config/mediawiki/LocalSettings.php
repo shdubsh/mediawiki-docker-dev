@@ -76,6 +76,8 @@ $wgTmpDirectory = "{$wgUploadDirectory}/tmp";
 $wgCacheDirectory = "{$wgUploadDirectory}/cache";
 
 $wgStatsdServer = "graphite-statsd";
+$wgMetricsTarget = "udp://statsd-exporter:9125";
+$wgMetricsFormat = "dogstatsd";
 
 ## Dev & Debug
 

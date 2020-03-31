@@ -81,6 +81,14 @@ services:
     volumes:
      - graphite-data:/opt/graphite/storage
 
+  statsd-exporter:
+    image: prom/statsd-exporter:v0.9.0
+    ports:
+      - '9102:9102'
+    volumes:
+      - "./config/statsd-exporter/mapping.yaml:/etc/statsd_mapping.yaml"
+    command: "--statsd.mapping-config=/etc/statsd_mapping.yaml"
+
   grafana:
     image: grafana/grafana:6.7.1
     environment:
